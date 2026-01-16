@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gaby Oliveira beauty - Estúdio de Beleza Premium. Agende seus serviços online.">
+    <meta name="theme-color" content="#d4a574">
+    
+    <title>Gaby Oliveira beauty</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <img 
+                src="./image/WhatsApp Image 2026-01-16 at 19.28.48.jpeg" 
+                alt="Retrato profissional feminino com estética beauty premium, cabelo longo ondulado castanho, maquiagem clean em tons neutros e blazer branco, fotografia em estúdio com fundo cinza escuro e iluminação suave." 
+                class="profile-image"
+                loading="lazy"
+                decoding="async"
+            >
+            <h1 class="studio-name">Gaby Oliveira beauty</h1>
+            
+            <!-- Ícones pequenos de redes sociais   AJUSTAR FUTURAMENTE--> 
+            <!--<nav class="mini-icons">
+                <a 
+                    href="https://www.instagram.com/gabyoliveirabeauty?igsh=MTh2ZjJwZG1la3dtZQ%3D%3D&utm_source=qr" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="mini-icon" 
+                    title="Seguir no Instagram"
+                >
+                    📷
+                </a>
+                <a 
+                    href="https://wa.me/message/M2EHPXL2M5CKP1" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="mini-icon" 
+                    title="Chamar no WhatsApp"
+                >
+                    💬
+                </a>
+            </nav>  --> 
+            
+            <div class="studio-tagline">Beauty & Estética ✨</div>
+            <p class="studio-description">
+                Clique abaixo e agende seu horário 💖
+            </p>
+        </section>
+
+        <!-- ACTION BUTTONS - BOTÕES PRINCIPAIS -->
+        <section class="action-buttons">
+            <a 
+                href="https://wa.me/message/M2EHPXL2M5CKP1" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="action-button"
+                title="Agendar pelo WhatsApp"
+            >
+                <span class="action-button-icon">💬</span>
+                <span>Agendar pelo WhatsApp</span>
+            </a>
+            <a 
+                href="https://www.instagram.com/gabyoliveirabeauty?igsh=MTh2ZjJwZG1la3dtZQ%3D%3D&utm_source=qr" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="action-button"
+                title="Seguir no Instagram"
+            >
+                <span class="action-button-icon">📷</span>
+                <span>Seguir no Instagram</span>
+            </a>
+            <a 
+                href="Catalogo-Atualizado.pdf" 
+                target="_blank" 
+                class="action-button"
+                title="Ver catálogo de serviços"
+            >
+                <span class="action-button-icon">📄</span>
+                <span>Catálogo de Serviços</span>
+            </a>
+        </section>
+    </main>
+
+    <!-- MODAL DE AGENDAMENTO -->
+    <div id="scheduleModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeScheduleModal()">&times;</span>
+            <h2 class="modal-title">Agendar Serviço</h2>
+            
+            <form id="scheduleForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="serviceName">Serviço *</label>
+                    <input 
+                        type="text" 
+                        id="serviceName" 
+                        name="serviceName" 
+                        required 
+                        placeholder="Selecione o serviço"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="clientName">Nome Completo *</label>
+                    <input 
+                        type="text" 
+                        id="clientName" 
+                        name="clientName" 
+                        required 
+                        placeholder="Seu nome"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="clientPhone">Telefone/WhatsApp *</label>
+                    <input 
+                        type="tel" 
+                        id="clientPhone" 
+                        name="clientPhone" 
+                        required 
+                        placeholder="(11) 99999-9999"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="scheduleDate">Data Desejada *</label>
+                    <input 
+                        type="date" 
+                        id="scheduleDate" 
+                        name="scheduleDate" 
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="scheduleTime">Horário *</label>
+                    <select id="scheduleTime" name="scheduleTime" required>
+                        <option value="">Selecione um horário</option>
+                        <option value="09:00">09:00</option>
+                        <option value="09:30">09:30</option>
+                        <option value="10:00">10:00</option>
+                        <option value="10:30">10:30</option>
+                        <option value="11:00">11:00</option>
+                        <option value="11:30">11:30</option>
+                        <option value="14:00">14:00</option>
+                        <option value="14:30">14:30</option>
+                        <option value="15:00">15:00</option>
+                        <option value="15:30">15:30</option>
+                        <option value="16:00">16:00</option>
+                        <option value="16:30">16:30</option>
+                        <option value="17:00">17:00</option>
+                        <option value="17:30">17:30</option>
+                        <option value="18:00">18:00</option>
+                        <option value="18:30">18:30</option>
+                        <option value="19:00">19:00</option>
+                        <option value="19:30">19:30</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="clientMessage">Observações</label>
+                    <textarea 
+                        id="clientMessage" 
+                        name="clientMessage" 
+                        placeholder="Alguma observação especial?"
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="form-submit">Confirmar Agendamento</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="script.js"></script>
+</body>
+</html>
+</head>
+<body>
+    <!-- MODAL DE AGENDAMENTO -->
+    <div id="scheduleModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeScheduleModal()">&times;</span>
+            <h2 class="modal-title">Agendar Serviço</h2>
+            
+            <form id="scheduleForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="serviceName">Serviço *</label>
+                    <input type="text" id="serviceName" name="serviceName" required placeholder="Selecione o serviço">
+                </div>
+
+                <div class="form-group">
+                    <label for="clientName">Nome Completo *</label>
+                    <input type="text" id="clientName" name="clientName" required placeholder="Seu nome">
+                </div>
+
+                <div class="form-group">
+                    <label for="clientPhone">Telefone/WhatsApp *</label>
+                    <input type="tel" id="clientPhone" name="clientPhone" required placeholder="(11) 99999-9999">
+                </div>
+
+                <div class="form-group">
+                    <label for="scheduleDate">Data Desejada *</label>
+                    <input type="date" id="scheduleDate" name="scheduleDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="scheduleTime">Horário *</label>
+                    <select id="scheduleTime" name="scheduleTime" required>
+                        <option value="">Selecione um horário</option>
+                        <option value="09:00">09:00</option>
+                        <option value="09:30">09:30</option>
+                        <option value="10:00">10:00</option>
+                        <option value="10:30">10:30</option>
+                        <option value="11:00">11:00</option>
+                        <option value="11:30">11:30</option>
+                        <option value="14:00">14:00</option>
+                        <option value="14:30">14:30</option>
+                        <option value="15:00">15:00</option>
+                        <option value="15:30">15:30</option>
+                        <option value="16:00">16:00</option>
+                        <option value="16:30">16:30</option>
+                        <option value="17:00">17:00</option>
+                        <option value="17:30">17:30</option>
+                        <option value="18:00">18:00</option>
+                        <option value="18:30">18:30</option>
+                        <option value="19:00">19:00</option>
+                        <option value="19:30">19:30</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="clientMessage">Observações</label>
+                    <textarea id="clientMessage" name="clientMessage" placeholder="Alguma observação especial?"></textarea>
+                </div>
+
+                <button type="submit" class="form-submit">Confirmar Agendamento</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Menu Mobile
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Modal
+        const scheduleModal = document.getElementById('scheduleModal');
+
+        function openScheduleModal(service = '') {
+            scheduleModal.style.display = 'block';
+            if (service) {
+                document.getElementById('serviceName').value = service;
+            }
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeScheduleModal() {
+            scheduleModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            document.getElementById('scheduleForm').reset();
+        }
+
+        // Fechar modal ao clicar fora
+        window.addEventListener('click', function(event) {
+            if (event.target == scheduleModal) {
+                closeScheduleModal();
+            }
+        });
+
+        // Validar e enviar formulário
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            const serviceName = document.getElementById('serviceName').value;
+            const clientName = document.getElementById('clientName').value;
+            const clientPhone = document.getElementById('clientPhone').value;
+            const scheduleDate = document.getElementById('scheduleDate').value;
+            const scheduleTime = document.getElementById('scheduleTime').value;
+            const clientMessage = document.getElementById('clientMessage').value;
+
+            // Formatar mensagem para WhatsApp
+            const message = `Olá! Gostaria de agendar um serviço 💅\n\nServiço: ${serviceName}\nNome: ${clientName}\nTelefone: ${clientPhone}\nData: ${new Date(scheduleDate).toLocaleDateString('pt-BR')}\nHorário: ${scheduleTime}\n${clientMessage ? `\nObservações: ${clientMessage}` : ''}`;
+
+            // Codificar mensagem
+            const encodedMessage = encodeURIComponent(message);
+
+            // Enviar via WhatsApp
+            const whatsappLink = `https://wa.me/5511999999999?text=${encodedMessage}`;
+            
+            // Simulação de sucesso
+            alert('Agendamento realizado com sucesso! 🎉\n\nVocê será redirecionado para o WhatsApp para confirmar.');
+            
+            // Redirecionar (descomente para ativar)
+            // window.open(whatsappLink, '_blank');
+            
+            closeScheduleModal();
+        }
+
+        // Definir data mínima para agendamento (hoje)
+        const dateInput = document.getElementById('scheduleDate');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+
+        // Animação ao scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideIn 0.6s ease forwards';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.opacity = '0';
+            observer.observe(card);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
