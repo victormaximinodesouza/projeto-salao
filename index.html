@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gaby Oliveira beauty - Estúdio de Beleza Premium. Agende seus serviços online.">
+    <meta name="theme-color" content="#d4a574">
+    
+    <title>Gaby Oliveira beauty</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+      <!-- HERO SECTION -->
+      <section class="hero">
+        <img 
+          src="./image/WhatsApp Image 2026-01-16 at 19.28.48.jpeg" 
+          alt="Retrato profissional feminino com estética beauty premium, cabelo longo ondulado castanho, maquiagem clean em tons neutros e blazer branco, fotografia em estúdio com fundo cinza escuro e iluminação suave." 
+          class="profile-image"
+          loading="lazy"
+          decoding="async"
+        >
+        <h1 class="studio-name">Gaby Oliveira beauty</h1>
+        
+        <div class="studio-tagline">Beauty & Estética ✨</div>
+        <p class="studio-description">
+          Clique abaixo e agende seu horário 💖
+        </p>
+      </section>
+
+      <!-- ACTION BUTTONS -->
+      <section class="action-buttons">
+        <a 
+          href="https://wa.me/message/M2EHPXL2M5CKP1" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="action-button"
+          title="Agendar pelo WhatsApp"
+        >
+          <span class="action-button-icon">💬</span>
+          <span>Agendar pelo WhatsApp</span>
+        </a>
+        <a 
+          href="https://www.instagram.com/gabyoliveirabeauty?igsh=MTh2ZjJwZG1la3dtZQ%3D%3D&utm_source=qr" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="action-button"
+          title="Seguir no Instagram"
+        >
+          <span class="action-button-icon">📷</span>
+          <span>Seguir no Instagram</span>
+        </a>
+        <a 
+          href="https://www.canva.com/design/DAG-mu0vddA/h73HfZ8vxttEM2OExR6r9w/view" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="action-button"
+          title="Ver catálogo de serviços"
+        >
+          <span class="action-button-icon">📄</span>
+          <span>Catálogo de Serviços</span>
+        </a>
+      </section>
+    </main>
+
+    <!-- MODAL DE AGENDAMENTO -->
+    <div id="scheduleModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal" onclick="closeScheduleModal()">&times;</span>
+        <h2 class="modal-title">Agendar Serviço</h2>
+        
+        <form id="scheduleForm" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="serviceName">Serviço *</label>
+            <input 
+              type="text" 
+              id="serviceName" 
+              name="serviceName" 
+              required 
+              placeholder="Selecione o serviço"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="clientName">Nome Completo *</label>
+            <input 
+              type="text" 
+              id="clientName" 
+              name="clientName" 
+              required 
+              placeholder="Seu nome"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="clientPhone">Telefone/WhatsApp *</label>
+            <input 
+              type="tel" 
+              id="clientPhone" 
+              name="clientPhone" 
+              required 
+              placeholder="(11) 99999-9999"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="scheduleDate">Data Desejada *</label>
+            <input 
+              type="date" 
+              id="scheduleDate" 
+              name="scheduleDate" 
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="scheduleTime">Horário *</label>
+            <select id="scheduleTime" name="scheduleTime" required>
+              <option value="">Selecione um horário</option>
+              <option value="09:00">09:00</option>
+              <option value="09:30">09:30</option>
+              <option value="10:00">10:00</option>
+              <option value="10:30">10:30</option>
+              <option value="11:00">11:00</option>
+              <option value="11:30">11:30</option>
+              <option value="14:00">14:00</option>
+              <option value="14:30">14:30</option>
+              <option value="15:00">15:00</option>
+              <option value="15:30">15:30</option>
+              <option value="16:00">16:00</option>
+              <option value="16:30">16:30</option>
+              <option value="17:00">17:00</option>
+              <option value="17:30">17:30</option>
+              <option value="18:00">18:00</option>
+              <option value="18:30">18:30</option>
+              <option value="19:00">19:00</option>
+              <option value="19:30">19:30</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="clientMessage">Observações</label>
+            <textarea 
+              id="clientMessage" 
+              name="clientMessage" 
+              placeholder="Alguma observação especial?"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="form-submit">Confirmar Agendamento</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="script.js"></script>
+  </body>
+</html>

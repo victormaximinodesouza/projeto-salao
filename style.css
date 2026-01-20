@@ -1,0 +1,1059 @@
+/* ===================================
+   VARIÁVEIS DE CORES E ESPAÇAMENTO
+   =================================== */
+:root {
+  --primary: #d4a574;
+  --secondary: #f5f1ed;
+  --dark: #8b7355;
+  --light: #faf8f5;
+  --text: #5a5a5a;
+  --white: #ffffff;
+  --shadow: 0 4px 15px rgba(139, 115, 85, 0.1);
+  --shadow-hover: 0 8px 25px rgba(139, 115, 85, 0.15);
+  
+  /* Espaçamento Mobile First */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 2.5rem;
+}
+
+/* ===================================
+   RESET E CONFIGURAÇÕES GLOBAIS
+   Mobile First (Base para 320px - 480px)
+   =================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Comic Neue', cursive;
+  background-color: var(--light);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Tipografia - Classes Utilitárias Comic Neue */
+.text-light {
+  font-family: 'Comic Neue', cursive;
+  font-weight: 300;
+}
+
+.text-regular {
+  font-family: 'Comic Neue', cursive;
+  font-weight: 400;
+}
+
+.text-bold {
+  font-family: 'Comic Neue', cursive;
+  font-weight: 700;
+}
+
+.text-italic {
+  font-family: 'Comic Neue', cursive;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Títulos - Playfair Display */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* ===================================
+   HEADER E NAVEGAÇÃO - MOBILE
+   =================================== */
+header {
+  background-color: var(--white);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--dark);
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--dark);
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ===================================
+   MAIN E CONTAINER - MOBILE
+   =================================== */
+main {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--spacing-md) var(--spacing-sm);
+}
+
+/* ===================================
+   SEÇÃO HERO - MOBILE
+   =================================== */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+  animation: fadeInDown 0.8s ease;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto var(--spacing-lg);
+  border: 4px solid var(--primary);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+  order: 1;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+}
+
+.studio-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--dark);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  order: 3;
+}
+
+.studio-tagline {
+  order: 4;
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+}
+
+.studio-description {
+  order: 5;
+  color: var(--text);
+  font-size: 0.9rem;
+  margin: var(--spacing-md) auto;
+}
+
+/* ===================================
+   ÍCONES PEQUENOS - MOBILE
+   =================================== */
+.mini-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin: var(--spacing-lg) auto var(--spacing-lg);
+  width: 100%;
+  order: 2;
+}
+
+.mini-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1rem;
+  color: var(--primary);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  border: 2px solid var(--primary);
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.mini-icon:active {
+  background-color: var(--primary);
+  color: var(--white);
+  transform: scale(1.1);
+}
+
+.studio-tagline {
+    order: 4;
+}
+
+.studio-description {
+    order: 5;
+}
+
+/* ===================================
+   BOTÕES GRANDES CENTRALIZADOS - MOBILE
+   =================================== */
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin: var(--spacing-2xl) 0;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--secondary);
+  border: 2px solid var(--dark);
+  color: var(--dark);
+  text-decoration: none;
+  border-radius: 20px;
+  font-family: 'Comic Neue', cursive;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: var(--shadow);
+  min-height: 48px;
+  width: 100%;
+  text-align: center;
+}
+
+.action-button:active {
+  background-color: var(--dark);
+  color: var(--white);
+  transform: scale(0.98);
+}
+
+.action-button-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+/* ===================================
+   SEÇÃO DE SERVIÇOS - MOBILE
+   =================================== */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--dark);
+  text-align: center;
+  margin: var(--spacing-2xl) 0 var(--spacing-lg);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-bottom: var(--spacing-md);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background-color: var(--primary);
+}
+
+.services-grid {
+  display: grid;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.card {
+  background-color: var(--white);
+  padding: var(--spacing-md);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-left: 4px solid var(--primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -30px;
+  width: 60px;
+  height: 60px;
+  background-color: var(--secondary);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.card:active {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+}
+
+.card:active::before {
+  right: -10px;
+  top: -10px;
+}
+
+.card-icon {
+  font-size: 1.6rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--dark);
+  margin-bottom: var(--spacing-xs);
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+.card-description {
+  font-size: 0.85rem;
+  color: var(--text);
+  margin-bottom: var(--spacing-sm);
+  position: relative;
+  z-index: 1;
+}
+
+.card-price {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===================================
+   BOTÕES DE AÇÃO (CTA) - MOBILE
+   =================================== */
+.cta-button {
+  display: inline-block;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  border: 2px solid var(--primary);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: 100%;
+  text-align: center;
+  margin-top: var(--spacing-sm);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-button:active {
+  background-color: var(--dark);
+  border-color: var(--dark);
+  transform: scale(0.98);
+}
+
+.cta-primary {
+  background-color: var(--primary);
+  color: var(--white);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.cta-secondary {
+  background-color: var(--white);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  margin-top: var(--spacing-lg);
+}
+
+.cta-secondary:active {
+  background-color: var(--secondary);
+  color: var(--dark);
+  border-color: var(--dark);
+}
+
+/* ===================================
+   SEÇÃO DE AGENDAMENTO - MOBILE
+   =================================== */
+.schedule-container {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--white) 100%);
+  padding: var(--spacing-lg) var(--spacing-md);
+  border-radius: 12px;
+  margin-bottom: var(--spacing-2xl);
+  text-align: center;
+}
+
+.schedule-container h3 {
+  color: var(--dark);
+  margin-bottom: var(--spacing-xs);
+  font-size: 1.1rem;
+}
+
+.schedule-container p {
+  color: var(--text);
+  font-size: 0.85rem;
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.6;
+}
+
+/* ===================================
+   LINKS SOCIAIS - MOBILE
+   =================================== */
+.social-section {
+  margin: var(--spacing-2xl) 0;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.social-link {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: var(--primary);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  border: 2px solid var(--primary);
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.social-link:active {
+  background-color: var(--primary);
+  color: var(--white);
+  transform: scale(1.1);
+}
+
+/* ===================================
+   FOOTER - MOBILE
+   =================================== */
+footer {
+  background-color: var(--white);
+  padding: var(--spacing-lg) var(--spacing-md);
+  text-align: center;
+  color: var(--text);
+  font-size: 0.8rem;
+  border-top: 1px solid var(--secondary);
+}
+
+.footer-text {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* ===================================
+   MODAL - MOBILE
+   =================================== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 200;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background-color: var(--white);
+  margin: auto;
+  padding: var(--spacing-lg);
+  border-radius: 12px;
+  width: 95%;
+  max-width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: slideUp 0.3s ease;
+  box-shadow: var(--shadow-hover);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.close-modal {
+  color: var(--text);
+  float: right;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: var(--spacing-xs);
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-modal:active {
+  color: var(--primary);
+}
+
+.modal-title {
+  font-family: 'Playfair Display', serif;
+  color: var(--dark);
+  margin: var(--spacing-md) 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  clear: both;
+}
+
+/* ===================================
+   FORMULÁRIO - MOBILE
+   =================================== */
+.form-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  color: var(--dark);
+  font-family: 'Comic Neue', cursive;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--secondary);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease;
+  min-height: 44px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+  padding: var(--spacing-md);
+}
+
+.form-submit {
+  width: 100%;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: var(--spacing-md);
+  border: none;
+  border-radius: 30px;
+  font-family: 'Comic Neue', cursive;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-submit:active {
+  background-color: var(--dark);
+  transform: scale(0.98);
+}
+
+/* ===================================
+   ANIMAÇÕES
+   =================================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===================================
+   RESPONSIVO - TABLET
+   (768px - 1024px)
+   =================================== */
+@media (min-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  main {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .profile-image {
+    width: 120px;
+    height: 120px;
+    order: 1;
+  }
+
+  .studio-name {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    order: 2;
+  }
+
+  .mini-icons {
+    order: 3;
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) auto var(--spacing-lg);
+  }
+
+  .studio-tagline {
+    font-size: 1.05rem;
+    order: 4;
+  }
+
+  .studio-description {
+    font-size: 0.95rem;
+    order: 5;
+  }
+
+  .mini-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 1.1rem;
+  }
+
+  .action-button {
+    font-size: 1rem;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    min-height: 50px;
+    gap: var(--spacing-lg);
+  }
+
+  .action-button-icon {
+    font-size: 1.4rem;
+  }
+
+  .card {
+    padding: var(--spacing-lg);
+  }
+
+  .card-icon {
+    font-size: 1.8rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-description {
+    font-size: 0.9rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+    margin: var(--spacing-xl) 0 var(--spacing-lg);
+  }
+
+  .schedule-container {
+    padding: var(--spacing-xl) var(--spacing-lg);
+  }
+
+  .schedule-container h3 {
+    font-size: 1.2rem;
+  }
+
+  .schedule-container p {
+    font-size: 0.95rem;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: var(--spacing-xl);
+  }
+
+  .modal-title {
+    font-size: 1.5rem;
+  }
+
+  label {
+    font-size: 0.95rem;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 1rem;
+    padding: var(--spacing-md);
+  }
+
+  .services-grid {
+    gap: var(--spacing-lg);
+  }
+}
+
+/* ===================================
+   RESPONSIVO - DESKTOP
+   (1024px+)
+   =================================== */
+@media (min-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+
+  header {
+    padding: var(--spacing-lg);
+  }
+
+  .logo {
+    font-size: 1.6rem;
+  }
+
+  main {
+    max-width: 800px;
+    padding: var(--spacing-xl) var(--spacing-lg);
+  }
+
+  .profile-image {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto var(--spacing-xl);
+  }
+
+  .studio-name {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .studio-tagline {
+    font-size: 1.15rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .studio-description {
+    font-size: 1rem;
+    margin: var(--spacing-lg) auto;
+  }
+
+  .mini-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-xl);
+    margin: var(--spacing-lg) auto var(--spacing-xl);
+    width: 100%;
+  }
+
+  .mini-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .mini-icon:hover {
+    background-color: var(--primary);
+    color: var(--white);
+    transform: scale(1.1);
+  }
+
+  .action-buttons {
+    gap: var(--spacing-lg);
+    margin: var(--spacing-2xl) 0;
+  }
+
+  .action-button {
+    font-size: 1.1rem;
+    padding: var(--spacing-lg) var(--spacing-2xl);
+    min-height: 52px;
+    max-width: 100%;
+  }
+
+  .action-button:hover {
+    background-color: var(--dark);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .action-button-icon {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    padding: var(--spacing-xl);
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-5px);
+  }
+
+  .card:hover::before {
+    right: -10px;
+    top: -10px;
+  }
+
+  .card-icon {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .card-description {
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .card-price {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+    margin: var(--spacing-2xl) 0 var(--spacing-xl);
+    padding-bottom: var(--spacing-md);
+  }
+
+  .schedule-container {
+    padding: var(--spacing-2xl) var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .schedule-container h3 {
+    font-size: 1.3rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .schedule-container p {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .cta-button {
+    font-size: 0.9rem;
+    padding: var(--spacing-md) var(--spacing-lg);
+    min-height: 44px;
+  }
+
+  .cta-button:hover {
+    background-color: var(--dark);
+    border-color: var(--dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .modal-content {
+    width: 90%;
+    max-width: 500px;
+    padding: var(--spacing-2xl);
+  }
+
+  .modal-title {
+    font-size: 1.6rem;
+  }
+
+  label {
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 1rem;
+    padding: var(--spacing-md);
+  }
+
+  .form-submit {
+    font-size: 1rem;
+    padding: var(--spacing-md);
+    min-height: 48px;
+  }
+
+  .form-submit:hover {
+    background-color: var(--dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .services-grid {
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .social-link {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+
+  .social-link:hover {
+    background-color: var(--primary);
+    color: var(--white);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  footer {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    font-size: 0.85rem;
+  }
+}
+
+/* ===================================
+   MEDIA QUERY - EXTRA LARGE (1440px+)
+   =================================== */
+@media (min-width: 1440px) {
+  main {
+    max-width: 900px;
+  }
+
+  .studio-name {
+    font-size: 2.8rem;
+  }
+
+  .action-button {
+    font-size: 1.15rem;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+}
+
